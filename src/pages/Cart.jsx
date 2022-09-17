@@ -63,17 +63,17 @@ const Cart = () => {
                               <p><strong>{item.title}</strong></p>
                               {/* <p>Color: blue</p>
                               <p>Size: M</p> */}
-                              <button
+                              {/* <button
                                 class="btn btn-outline-dark border-0 btn-sm mx-1"
                                 data-mdb-toggle="tooltip"
                                 title="Remove item"
                               >
                                 <i class="fas fa-trash"></i>
-                              </button>
+                              </button> */}
                             </div>
 
                             <div class="col-lg-4 col-md-6">
-                              <div
+                              {/* <div
                                 class="d-flex mb-4"
                                 style={{ maxWidth: "300px" }}
                               >
@@ -90,7 +90,7 @@ const Cart = () => {
                                 >
                                   <i class="fas fa-plus"></i>
                                 </button>
-                              </div>
+                              </div> */}
 
                               <p class="text-start text-md-center">
                                 <strong>${item.price}</strong>
