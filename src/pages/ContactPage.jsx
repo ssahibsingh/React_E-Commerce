@@ -1,10 +1,16 @@
 import React from 'react'
-import {Navbar, Contact} from "../components";
+import {Navbar} from "../components";
 const ContactPage = () => {
   return (
     <>
         <Navbar />
-        <Contact />
+        <>
+        <div className="container my-3 py-3">
+            <h1 className="text-center">Contact Us</h1>
+            <hr />
+            
+        </div>
+    </>
     </>
   )
 }

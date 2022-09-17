@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/action";
+
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+
+import { Link } from "react-router-dom";
+
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
+
+
+  const dispatch = useDispatch();
+  const addProduct = (product)=>{
+    dispatch(addCart(product))
+  }
 
   useEffect(() => {
     const getProducts = async () => {
@@ -54,23 +66,21 @@ const Products = () => {
     );
   };
 
-  const filterProduct = (cat) =>{
+  const filterProduct = (cat) => {
     const updatedList = data.filter((item) => item.category === cat);
     setFilter(updatedList);
-//   }
-    // return setFilter(data.filter((item) => item.category === cat));
   }
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons col-12 d-flex justify-content-center py-5">
-          <button className="btn btn-outline-dark mx-2" onClick={()=>setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark mx-2" onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark mx-2" onClick={()=>filterProduct("women's clothing")}>
+          <button className="btn btn-outline-dark mx-2" onClick={() => setFilter(data)}>All</button>
+          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
+          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("women's clothing")}>
             Women's Clothing
           </button>
-          <button className="btn btn-outline-dark mx-2" onClick={()=>filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark mx-2" onClick={()=>filterProduct("electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("electronics")}>Electronics</button>
         </div>
 
         {filter.map((product) => {
@@ -98,12 +108,12 @@ const Products = () => {
                     <li class="list-group-item">Vestibulum at eros</li> */}
                   </ul>
                   <div class="card-body">
-                    <a href="/" class="btn btn-dark m-1">
+                    <Link to={"/product/" + product.id} class="btn btn-dark m-1">
                       Buy Now
-                    </a>
-                    <a href="/" class="btn btn-dark m-1">
+                    </Link>
+                    <button class="btn btn-dark m-1" onClick={()=>addProduct(product)}>
                       Add to Cart
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
