@@ -15,7 +15,7 @@ const Products = () => {
 
 
   const dispatch = useDispatch();
-  const addProduct = (product)=>{
+  const addProduct = (product) => {
     dispatch(addCart(product))
   }
 
@@ -27,7 +27,6 @@ const Products = () => {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
-        console.log(filter);
       }
 
       return () => {
@@ -85,39 +84,38 @@ const Products = () => {
 
         {filter.map((product) => {
           return (
-            <>
-              <div id={product.id} className="col-md-4 mb-4">
-                <div class="card text-center h-100" key={product.id}>
-                  <img
-                    class="card-img-top p-3"
-                    src={product.image}
-                    alt="Card"
-                    height={300}
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      {product.title.substring(0, 12)}...
-                    </h5>
-                    <p class="card-text">
-                      {product.description.substring(0, 90)}...
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item lead">$ {product.price}</li>
-                    {/* <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li> */}
-                  </ul>
-                  <div class="card-body">
-                    <Link to={"/product/" + product.id} class="btn btn-dark m-1">
-                      Buy Now
-                    </Link>
-                    <button class="btn btn-dark m-1" onClick={()=>addProduct(product)}>
-                      Add to Cart
-                    </button>
-                  </div>
+            <div id={product.id} key={product.id} className="col-md-4 mb-4">
+              <div className="card text-center h-100" key={product.id}>
+                <img
+                  className="card-img-top p-3"
+                  src={product.image}
+                  alt="Card"
+                  height={300}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {product.title.substring(0, 12)}...
+                  </h5>
+                  <p className="card-text">
+                    {product.description.substring(0, 90)}...
+                  </p>
+                </div>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item lead">$ {product.price}</li>
+                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
+                    <li className="list-group-item">Vestibulum at eros</li> */}
+                </ul>
+                <div className="card-body">
+                  <Link to={"/product/" + product.id} className="btn btn-dark m-1">
+                    Buy Now
+                  </Link>
+                  <button className="btn btn-dark m-1" onClick={() => addProduct(product)}>
+                    Add to Cart
+                  </button>
                 </div>
               </div>
-            </>
+            </div>
+
           );
         })}
       </>

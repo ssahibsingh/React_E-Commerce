@@ -121,28 +121,28 @@ const Product = () => {
     return (
       <>
         <div className="py-4 my-4">
-          <div class="row">
+          <div className="row">
             {similarProducts.map((item) => {
               return (
-                <div class="card mx-4 text-center">
+                <div key={item.id} className="card mx-4 text-center">
                   <img
-                    class="card-img-top p-3"
+                    className="card-img-top p-3"
                     src={item.image}
                     alt="Card"
                     height={300}
                     width={300}
                   />
-                  <div class="card-body">
-                    <h5 class="card-title">{item.title.substring(0, 15)}...</h5>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.title.substring(0, 15)}...</h5>
                   </div>
-                  {/* <ul class="list-group list-group-flush">
-                    <li class="list-group-item lead">${product.price}</li>
+                  {/* <ul className="list-group list-group-flush">
+                    <li className="list-group-item lead">${product.price}</li>
                   </ul> */}
-                  <div class="card-body">
-                    <Link to={"/product/" + item.id} class="btn btn-dark m-1">
+                  <div className="card-body">
+                    <Link to={"/product/" + item.id} className="btn btn-dark m-1">
                       Buy Now
                     </Link>
-                    <button class="btn btn-dark m-1" onClick={()=>addProduct(item)}>
+                    <button className="btn btn-dark m-1" onClick={()=>addProduct(item)}>
                       Add to Cart
                     </button>
                   </div>
