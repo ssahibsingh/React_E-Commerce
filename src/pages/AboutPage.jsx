@@ -1,10 +1,9 @@
 import React from 'react'
-import {Navbar} from "../components";
+import { Footer, Navbar } from "../components";
 const AboutPage = () => {
   return (
     <>
-      <Navbar/>
-      <>
+      <Navbar />
       <div className="container my-3 py-3">
         <h1 className="text-center">About Us</h1>
         <hr />
@@ -28,7 +27,7 @@ const AboutPage = () => {
         <div className="row">
           <div className="col-md-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160}/>
+              <img className="card-img-top" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
                 <h5 className="card-title text-center">Mens's Clothing</h5>
               </div>
@@ -36,7 +35,7 @@ const AboutPage = () => {
           </div>
           <div className="col-md-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160}/>
+              <img className="card-img-top" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
                 <h5 className="card-title text-center">Women's Clothing</h5>
               </div>
@@ -44,7 +43,7 @@ const AboutPage = () => {
           </div>
           <div className="col-md-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160}/>
+              <img className="card-img-top" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
                 <h5 className="card-title text-center">Jewelery</h5>
               </div>
@@ -52,7 +51,7 @@ const AboutPage = () => {
           </div>
           <div className="col-md-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top" src="https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160}/>
+              <img className="card-img-top" src="https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
               <div className="card-body">
                 <h5 className="card-title text-center">Electronics</h5>
               </div>
@@ -60,7 +59,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-    </>
+      <Footer />
     </>
   )
 }

@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 
 const Product = () => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const Product = () => {
 
   const dispatch = useDispatch()
 
-  const addProduct = (product)=>{
+  const addProduct = (product) => {
     dispatch(addCart(product))
   }
 
@@ -83,7 +83,7 @@ const Product = () => {
               </p>
               <h3 className="display-6  my-4">${product.price}</h3>
               <p className="lead">{product.description}</p>
-              <button className="btn btn-outline-dark" onClick={()=>addProduct(product)}>Add to Cart</button>
+              <button className="btn btn-outline-dark" onClick={() => addProduct(product)}>Add to Cart</button>
               <Link to="/cart" className="btn btn-dark mx-3">
                 Go to Cart
               </Link>
@@ -100,16 +100,16 @@ const Product = () => {
         <div className="my-4 py-4">
           <div className="row">
             <div className="mx-4">
-                <Skeleton height={400} width={250} />
+              <Skeleton height={400} width={250} />
             </div>
             <div className="mx-4">
-                <Skeleton height={400} width={250} />
+              <Skeleton height={400} width={250} />
             </div>
             <div className="mx-4">
-                <Skeleton height={400} width={250} />
+              <Skeleton height={400} width={250} />
             </div>
             <div className="mx-4">
-                <Skeleton height={400} width={250} />
+              <Skeleton height={400} width={250} />
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ const Product = () => {
                     <Link to={"/product/" + item.id} className="btn btn-dark m-1">
                       Buy Now
                     </Link>
-                    <button className="btn btn-dark m-1" onClick={()=>addProduct(item)}>
+                    <button className="btn btn-dark m-1" onClick={() => addProduct(item)}>
                       Add to Cart
                     </button>
                   </div>
@@ -157,17 +157,16 @@ const Product = () => {
   return (
     <>
       <Navbar />
-      <>
-        <div className="container">
-          <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
-          <div className="row my-5 py-5">
-            <h2 className="">You may also Like</h2>
-            <Marquee pauseOnHover={true} pauseOnClick={true} speed={50}>
-              {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
-            </Marquee>
-          </div>
+      <div className="container">
+        <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
+        <div className="row my-5 py-5">
+          <h2 className="">You may also Like</h2>
+          <Marquee pauseOnHover={true} pauseOnClick={true} speed={50}>
+            {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
+          </Marquee>
         </div>
-      </>
+      </div>
+      <Footer />
     </>
   );
 };
