@@ -12,8 +12,8 @@ const Login = () => {
         <div class="row my-4 h-100">
           <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
             <form>
-              <div class="form-floating my-3">
-                <label for="floatingInput  display-4">Email address</label>
+              <div class="my-3">
+                <label for="display-4">Email address</label>
                 <input
                   type="email"
                   class="form-control"
@@ -21,7 +21,7 @@ const Login = () => {
                   placeholder="name@example.com"
                 />
               </div>
-              <div class="form-floating  my-3">
+              <div class="my-3">
                 <label for="floatingPassword display-4">Password</label>
                 <input
                   type="password"
