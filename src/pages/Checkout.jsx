@@ -11,7 +11,7 @@ const Checkout = () => {
         <div className="row">
           <div className="col-md-12 py-5 bg-light text-center">
             <h4 className="p-3 display-5">No item in Cart</h4>
-            <Link to="/" className="btn btn-lg btn-outline-dark mx-4">
+            <Link to="/" className="btn btn-outline-dark mx-4">
               <i className="fa fa-arrow-left"></i> Continue Shopping
             </Link>
           </div>
@@ -36,56 +36,6 @@ const Checkout = () => {
         <div className="container py-5">
           <div className="row my-4">
             <div className="col-md-5 col-lg-4 order-md-last">
-              {/* <div className="bg-light">
-                <h5 className="p-3">Order Summary</h5>
-              </div>
-              <ul className="list-group mb-3">
-                <li className="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 className="my-0">Product name</h6>
-                    <small className="text-muted">Brief description</small>
-                  </div>
-                  <span className="text-muted">$12</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 className="my-0">Second product</h6>
-                    <small className="text-muted">Brief description</small>
-                  </div>
-                  <span className="text-muted">$8</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 className="my-0">Third item</h6>
-                    <small className="text-muted">Brief description</small>
-                  </div>
-                  <span className="text-muted">$5</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between bg-light">
-                  <div className="text-success">
-                    <h6 className="my-0">Promo code</h6>
-                    <small>EXAMPLECODE</small>
-                  </div>
-                  <span className="text-success">−$5</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
-                  <strong>$20</strong>
-                </li>
-              </ul>
-
-              <form className="card p-2">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Promo code"
-                  />
-                  <button type="submit" className="btn btn-secondary">
-                    Redeem
-                  </button>
-                </div>
-              </form> */}
               <div className="card mb-4">
                 <div className="card-header py-3 bg-light">
                   <h5 className="mb-0">Order Summary</h5>
@@ -93,7 +43,7 @@ const Checkout = () => {
                 <div className="card-body">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                      Products ({totalItems})<span>${subtotal}</span>
+                      Products ({totalItems})<span>${Math.round(subtotal)}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
@@ -104,7 +54,7 @@ const Checkout = () => {
                         <strong>Total amount</strong>
                       </div>
                       <span>
-                        <strong>${subtotal + shipping}</strong>
+                        <strong>${Math.round(subtotal + shipping)}</strong>
                       </span>
                     </li>
                   </ul>
@@ -320,7 +270,7 @@ const Checkout = () => {
                     <hr className="my-4" />
 
                     <button
-                      className="w-100 btn btn-primary btn-lg"
+                      className="w-100 btn btn-primary "
                       type="submit" disabled
                     >
                       Continue to checkout

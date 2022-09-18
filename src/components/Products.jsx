@@ -13,8 +13,8 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
-
   const dispatch = useDispatch();
+
   const addProduct = (product) => {
     dispatch(addCart(product))
   }
@@ -43,22 +43,22 @@ const Products = () => {
         <div className="col-12 py-5 text-center">
           <Skeleton height={40} width={560} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
-        <div className="col-md-4 mb-4">
+        <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
           <Skeleton height={592} />
         </div>
       </>
@@ -72,19 +72,19 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons col-12 d-flex justify-content-center py-5">
-          <button className="btn btn-outline-dark mx-2" onClick={() => setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("women's clothing")}>
+        <div className="buttons text-center py-5">
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => setFilter(data)}>All</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("men's clothing")}>Men's Clothing</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("women's clothing")}>
             Women's Clothing
           </button>
-          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark mx-2" onClick={() => filterProduct("electronics")}>Electronics</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+          <button className="btn btn-outline-dark btn-sm m-2" onClick={() => filterProduct("electronics")}>Electronics</button>
         </div>
 
         {filter.map((product) => {
           return (
-            <div id={product.id} key={product.id} className="col-md-4 mb-4">
+            <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
               <div className="card text-center h-100" key={product.id}>
                 <img
                   className="card-img-top p-3"
