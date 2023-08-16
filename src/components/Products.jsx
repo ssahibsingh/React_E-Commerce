@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
+import Modal from "./Modal";
+
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -11,6 +13,8 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false)
+  const [getProduct, setGetProduct] = useState({})
   let componentMounted = true;
 
   const dispatch = useDispatch();
@@ -83,6 +87,7 @@ const Products = () => {
         </div>
 
         {filter.map((product) => {
+          console.log(product)
           return (
             <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
               <div className="card text-center h-100" key={product.id}>
@@ -91,11 +96,24 @@ const Products = () => {
                   src={product.image}
                   alt="Card"
                   height={300}
+                  style={{cursor: 'pointer'}}
+                  onClick={()=>{
+                    setGetProduct(product)
+                    setShow(true)
+                  }}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
-                  </h5>
+                  <a 
+                    href="#/" 
+                    style={{fontSize: '20px', textDecoration: 'none'}} 
+                    className="card-title"
+                    onClick={()=>{
+                      setGetProduct(product)
+                      setShow(true)
+                    }}
+                  >
+                    {product.title.substring(0, 20)}...
+                  </a>
                   <p className="card-text">
                     {product.description.substring(0, 90)}...
                   </p>
@@ -114,6 +132,14 @@ const Products = () => {
                   </button>
                 </div>
               </div>
+
+              <Modal 
+                 show={show} 
+                 closeModal={()=> 
+                 setShow(false)}
+
+                 getProduct={getProduct}
+              />
             </div>
 
           );
