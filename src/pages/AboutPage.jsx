@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Footer, Navbar } from "../components";
 const AboutPage = () => {
   return (
@@ -8,52 +8,67 @@ const AboutPage = () => {
         <h1 className="text-center">About Us</h1>
         <hr />
         <p className="lead text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          facere doloremque veritatis odit similique sequi. Odit amet fuga nam
-          quam quasi facilis sed doloremque saepe sint perspiciatis explicabo
-          totam vero quas provident ipsam, veritatis nostrum velit quos
-          recusandae est mollitia esse fugit dolore laudantium. Ex vel explicabo
-          earum unde eligendi autem praesentium, doloremque distinctio nesciunt
-          porro tempore quis eaque labore voluptatibus ea necessitatibus
-          exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-          tempore vel tenetur soluta dolore sunt maxime aliquam corporis est,
-          quo saepe dolorem optio minus sint nemo totam dolorum! Reprehenderit
-          delectus expedita a alias nam recusandae illo debitis repellat libero,
-          quasi explicabo molestiae saepe, dolorem tempore itaque eveniet quam
-          dignissimos blanditiis excepturi harum numquam vel nihil? Ipsum
+          Welcome to VhickStore – Your Ultimate Destination for Stylish Jerseys,
+          Comfy Crocs, and Trendy Men's Shoes!
+          <br></br>
+          <br></br>
+          At VhickStore, we are passionate about providing you with the latest
+          in fashion and comfort. Our mission is to offer a curated selection of
+          high-quality products that not only elevate your style but also make
+          you feel confident and at ease.
         </p>
 
         <h2 className="text-center py-4">Our Products</h2>
         <div className="row">
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://i.pinimg.com/564x/eb/a8/89/eba889b9b863b4d3f8b7ebfa15199eff.jpg"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
-                <h5 className="card-title text-center">Mens's Clothing</h5>
+                <h5 className="card-title text-center">Mens's Jerseys</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://i.pinimg.com/564x/f4/78/f5/f478f5fb88c81953e637c5dbf2627f0c.jpg"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
-                <h5 className="card-title text-center">Women's Clothing</h5>
+                <h5 className="card-title text-center">Footwears</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://i.pinimg.com/564x/1a/c7/23/1ac723d6c7e725cc076893d757d8236f.jpg"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
-                <h5 className="card-title text-center">Jewelery</h5>
+                <h5 className="card-title text-center">crocs</h5>
               </div>
             </div>
           </div>
           <div className="col-md-3 col-sm-6 mb-3 px-3">
             <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
+              <img
+                className="card-img-top img-fluid"
+                src="https://i.pinimg.com/564x/5b/46/4e/5b464e942862cede539413d96c7a2964.jpg"
+                alt=""
+                height={160}
+              />
               <div className="card-body">
-                <h5 className="card-title text-center">Electronics</h5>
+                <h5 className="card-title text-center">slides</h5>
               </div>
             </div>
           </div>
@@ -61,7 +76,7 @@ const AboutPage = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

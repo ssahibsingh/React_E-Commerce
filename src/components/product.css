@@ -1,0 +1,96 @@
+.myportfolio {
+  background: #f4f4f4;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.port1 {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.port2 {
+  width: 200px;
+  display: flex;
+  margin-top: 40px;
+}
+.port3 {
+  display: block;
+  width: 200px;
+  padding: 20px;
+  background: rgba(217, 217, 217, 1);
+  border-radius: 0px 0px 15px 15px;
+}
+.img-container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Shippori Antique, sans-serif;
+  max-width: 100%;
+}
+.img-container1 {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 0px;
+  height: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  filter: none;
+  background-size: cover;
+  background-image: none;
+  background-position: 0% 0%;
+  border-radius: 15px 15px 0px 0px;
+}
+.img-container2 {
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  max-width: 100%;
+}
+#arrrow1 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 4;
+}
+#arrrow2 {
+  color: white;
+  position: absolute;
+  top: 47px;
+  right: 30px;
+  z-index: 4;
+}
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px) {
+  .port2 {
+  }
+  .port3 {
+  }
+}
+#arrow2 {
+  color: black;
+  margin-top: 50px;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+/* 1. for the item to maintain its original stacking context, use position relative on the main container,
+  2. instead of using relative on the component, you could also use transform: translate(x,y)
+  */
