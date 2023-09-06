@@ -25,13 +25,7 @@ const Products = () => {
   const ShowProducts = ({ filterItem, setItem }) => {
     return (
       <>
-        <div
-          style={{
-            justifyContent: "space-evenly",
-            display: "flex",
-            padding: "50px",
-          }}
-        >
+        <div className="bottoncomponent">
           <button
             className="btn-dark text-white  btn"
             onClick={() => setItem(Data)}
@@ -100,7 +94,7 @@ const Products = () => {
     };
     return (
       <>
-        <div className="container-fluid">
+        <div className="card">
           <div className="row justify-content-center">
             {item.map((Val) => {
               return (
@@ -109,7 +103,7 @@ const Products = () => {
                     <img
                       src={Val.img}
                       alt={Val.title}
-                      className="img-container img-container1 img-container2 "
+                      className="img-container "
                     />
                   </div>
                   <div className="port3">
@@ -120,7 +114,7 @@ const Products = () => {
                       {Val.title}
                     </div>
                     <div className="card-text">{Val.desc}</div>
-                    <div className="card-body">
+                    <div>
                       <Link
                         to={"./product/" + Val.id}
                         className="btn btn-dark m-1"
@@ -146,7 +140,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="container my-3 py-3">
+      <div className="myportfolio">
         <div className="row">
           <div className="col-12">
             <h2 className="display-5 text-center">Latest Products</h2>

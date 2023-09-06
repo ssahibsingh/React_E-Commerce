@@ -1,24 +1,36 @@
 .myportfolio {
   background: #f4f4f4;
-  height: 100vh;
   overflow-x: hidden;
 }
-
-.port1 {
-  width: 200px;
+.card {
   display: flex;
-  justify-content: center;
+  background-color: #fff;
+}
+.bottoncomponent {
   flex-wrap: wrap;
+  gap: 20px;
+  display: flex;
+  padding: 20px;
+}
+.port1 {
+  width: 320px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  margin: 10px;
 }
 .port2 {
-  width: 200px;
+  width: 300px;
   display: flex;
   margin-top: 40px;
 }
 .port3 {
   display: block;
-  width: 200px;
-  padding: 20px;
+  width: 300px;
+  padding: 10px;
   background: rgba(217, 217, 217, 1);
   border-radius: 0px 0px 15px 15px;
 }
@@ -26,42 +38,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Shippori Antique, sans-serif;
-  max-width: 100%;
+  width: 100%;
 }
-.img-container1 {
-  position: absolute;
-  box-sizing: border-box;
-  padding: 0px;
-  border: none;
-  margin: auto;
-  display: block;
-  width: 0px;
-  height: 0px;
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  filter: none;
-  background-size: cover;
-  background-image: none;
-  background-position: 0% 0%;
-  border-radius: 15px 15px 0px 0px;
-}
-.img-container2 {
-  box-sizing: border-box;
-  display: inline-block;
-  overflow: hidden;
-  width: initial;
-  height: initial;
-  background: none;
-  opacity: 1;
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  max-width: 100%;
-}
+
 #arrrow1 {
   position: absolute;
   top: 30px;
