@@ -1,8 +1,25 @@
-import React from "react";
+import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../components";
+import { logIn } from '../firebase-config';
 
 const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loginStatus, setLoginStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          await logIn(email, password);
+          setLoginStatus('success');
+          setEmail('');
+          setPassword('');
+      } catch (error) {
+          setLoginStatus('error');
+      }
+  };
+
   return (
     <>
       <Navbar />
@@ -11,7 +28,17 @@ const Login = () => {
         <hr />
         <div class="row my-4 h-100">
           <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
-            <form>
+          {loginStatus === 'error' && (
+              <div className="alert alert-danger" role="alert">
+                  Incorrect e-mail and password combination enterted
+              </div>
+          )}
+          {loginStatus === 'success' && (
+              <div className="alert alert-success" role="alert">
+                  User successfully logged in
+              </div>
+          )}
+          <form onSubmit={handleSubmit}>
               <div class="my-3">
                 <label for="display-4">Email address</label>
                 <input
@@ -19,6 +46,8 @@ const Login = () => {
                   class="form-control"
                   id="floatingInput"
                   placeholder="name@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div class="my-3">
@@ -28,13 +57,15 @@ const Login = () => {
                   class="form-control"
                   id="floatingPassword"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="my-3">
                 <p>New Here? <Link to="/register" className="text-decoration-underline text-info">Register</Link> </p>
               </div>
               <div className="text-center">
-                <button class="my-2 mx-auto btn btn-dark" type="submit" disabled>
+                <button class="my-2 mx-auto btn btn-dark" type="submit">
                   Login
                 </button>
               </div>
