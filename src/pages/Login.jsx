@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Link } from "react-router-dom";
-import { Footer, Navbar } from "../components";
+import { Footer, Navbar, SubmitButton } from "../components";
 import { logIn } from '../firebase-config';
 
 const Login = () => {
@@ -65,9 +65,7 @@ const Login = () => {
                 <p>New Here? <Link to="/register" className="text-decoration-underline text-info">Register</Link> </p>
               </div>
               <div className="text-center">
-                <button class="my-2 mx-auto btn btn-dark" type="submit">
-                  Login
-                </button>
+                  <SubmitButton inputs={[{ value: email }, { value: password }]} />
               </div>
             </form>
           </div>
