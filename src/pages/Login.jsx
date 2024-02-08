@@ -9,6 +9,7 @@ const Login = () => {
   const [loginStatus, setLoginStatus] = useState(null);
 
   const handleSubmit = async (e) => {
+    setLoginStatus('');
       e.preventDefault();
       try {
           await logIn(email, password);
@@ -30,7 +31,7 @@ const Login = () => {
           <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
           {loginStatus === 'error' && (
               <div className="alert alert-danger" role="alert">
-                  Incorrect e-mail and password combination enterted
+                  Incorrect e-mail or password
               </div>
           )}
           {loginStatus === 'success' && (
@@ -59,6 +60,8 @@ const Login = () => {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  pattern=".{6,}" 
+                  title="Password should be at least 6 characters"
                 />
               </div>
               <div className="my-3">

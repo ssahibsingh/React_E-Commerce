@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Footer, Navbar, SubmitButton } from '../components';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,7 @@ const Register = () => {
     const [registrationStatus, setRegistrationStatus] = useState(null);
 
     const handleSubmit = async (e) => {
+        setRegistrationStatus('');
         e.preventDefault();
         try {
             await registerUser(email, password);
@@ -33,7 +35,7 @@ const Register = () => {
                     <div className="col-md-4 col-lg-4 col-sm-8 mx-auto">
                         {registrationStatus === 'error' && (
                             <div className="alert alert-danger" role="alert">
-                                E-mail is associated with an existing account
+                                Email is associated with existing account
                             </div>
                         )}
                         {registrationStatus === 'success' && (
@@ -73,6 +75,8 @@ const Register = () => {
                                     placeholder="Password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    pattern=".{6,}" 
+                                    title="Password should be at least 6 characters"
                                 />
                             </div>
                             <div className="my-3">
