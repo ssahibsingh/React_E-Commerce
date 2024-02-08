@@ -9,6 +9,7 @@ const Home = () => {
             className="card-img img-fluid"
             src="./assets/main.png.jpg"
             alt="Card"
+            data-testid="photo-banner"
             height={500}
           />
           <div className="card-img-overlay d-flex align-items-center">
