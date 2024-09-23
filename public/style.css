@@ -1,0 +1,9 @@
+#hero {
+    height: 80vh;
+
+    background-size: cover;
+    background-image: url('./assets/mob-photo.png');
+    background-position: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
