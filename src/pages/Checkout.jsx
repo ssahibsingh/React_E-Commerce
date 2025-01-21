@@ -207,6 +207,12 @@ const Checkout = () => {
                           id="cc-name"
                           placeholder=""
                           required
+                          onKeyDown={(e) => {
+                            const nameRegex = /^[A-Za-z .]+$/
+                            if (!nameRegex?.test(e?.key)) {
+                                e?.preventDefault()
+                            }
+                          }}
                         />
                         <small className="text-muted">
                           Full name as displayed on card
@@ -221,11 +227,16 @@ const Checkout = () => {
                           Credit card number
                         </label>
                         <input
-                          type="text"
+                          type="number"
                           className="form-control"
                           id="cc-number"
                           placeholder=""
                           required
+                          onKeyDown={(e) => {
+                            if (e?.keyCode === 38 || e?.keyCode === 40 || e?.key.toLowerCase() === 'e' || e?.key.toLowerCase() === 'v' || e?.key === '+' || e?.key === '-') {
+                              e?.preventDefault()
+                            }
+                          }}
                         />
                         <div className="invalid-feedback">
                           Credit card number is required
