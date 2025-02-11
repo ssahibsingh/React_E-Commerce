@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components";
+import { useEffect } from "react";
+import analytics from "../lib/segment";
 
 const PageNotFound = () => {
+  useEffect(() => {
+    analytics.page(); // Track page views on load
+  }, []);
   return (
     <>
       <Navbar />

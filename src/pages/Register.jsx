@@ -1,7 +1,13 @@
 import React from 'react'
 import { Footer, Navbar } from "../components";
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import analytics from '../lib/segment';
+
 const Register = () => {
+    useEffect(() => {
+        analytics.page(); // Track page views on load
+      }, []);
     return (
         <>
             <Navbar />

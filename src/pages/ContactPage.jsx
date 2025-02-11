@@ -1,6 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
+import analytics from "../lib/segment";
+
 import { Footer, Navbar } from "../components";
 const ContactPage = () => {
+
+  useEffect(() => {
+    analytics.page(); // Track page views on load
+  }, []);
+  
   return (
     <>
       <Navbar />

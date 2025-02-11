@@ -4,10 +4,12 @@ import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
-
+import analytics from '../lib/segment';
 import { Footer, Navbar } from "../components";
 
+
 const Product = () => {
+
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [similarProducts, setSimilarProducts] = useState([]);
@@ -19,6 +21,10 @@ const Product = () => {
   const addProduct = (product) => {
     dispatch(addCart(product));
   };
+
+  useEffect(() => {
+    analytics.page(); // Track page views on load
+  }, []);
 
   useEffect(() => {
     const getProduct = async () => {

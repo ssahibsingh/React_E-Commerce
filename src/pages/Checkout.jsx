@@ -2,7 +2,13 @@ import React from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import analytics from "../lib/segment";
+
 const Checkout = () => {
+  useEffect(() => {
+    analytics.page(); // Track page views on load
+  }, []);
   const state = useSelector((state) => state.handleCart);
 
   const EmptyCart = () => {

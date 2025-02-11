@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer, Navbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { addCart, delCart } from "../redux/action";
 import { Link } from "react-router-dom";
+import analytics from "../lib/segment";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    analytics.page(); // Track page views on load
+  }, []);
 
   const EmptyCart = () => {
     return (
