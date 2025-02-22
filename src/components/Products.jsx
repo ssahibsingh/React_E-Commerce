@@ -12,6 +12,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("all");
   let componentMounted = true;
 
   const dispatch = useDispatch();
@@ -68,7 +69,10 @@ const Products = () => {
 
   const filterProduct = (cat) => {
     const updatedList = data.filter((item) => item.category === cat);
+    if(cat!==selectedFilter){
+    setSelectedFilter(cat);
     setFilter(updatedList);
+    }
   };
 
   const ShowProducts = () => {
@@ -76,31 +80,31 @@ const Products = () => {
       <>
         <div className="buttons text-center py-5">
           <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => setFilter(data)}
+            className= {`btn ${selectedFilter==="all"?"btn-dark":"btn-outline-dark"} btn-sm m-2`}
+            onClick={() => {setFilter(data);setSelectedFilter("all")}}
           >
             All
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className= {`btn ${selectedFilter==="men's clothing"?"btn-dark":"btn-outline-dark"} btn-sm m-2`}
             onClick={() => filterProduct("men's clothing")}
           >
             Men's Clothing
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className= {`btn ${selectedFilter==="women's clothing"?"btn-dark":"btn-outline-dark"} btn-sm m-2`}
             onClick={() => filterProduct("women's clothing")}
           >
             Women's Clothing
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className= {`btn ${selectedFilter==="jewelery"?"btn-dark":"btn-outline-dark"} btn-sm m-2`}
             onClick={() => filterProduct("jewelery")}
           >
             Jewelery
           </button>
           <button
-            className="btn btn-outline-dark btn-sm m-2"
+            className= {`btn ${selectedFilter==="electronics"?"btn-dark":"btn-outline-dark"} btn-sm m-2`}
             onClick={() => filterProduct("electronics")}
           >
             Electronics
