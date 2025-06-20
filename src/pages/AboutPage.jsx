@@ -1,67 +1,57 @@
-import React from 'react'
+import React from 'react';
 import { Footer, Navbar } from "../components";
+
 const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <div className="container my-3 py-3">
-        <h1 className="text-center">About Us</h1>
-        <hr />
-        <p className="lead text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-          facere doloremque veritatis odit similique sequi. Odit amet fuga nam
-          quam quasi facilis sed doloremque saepe sint perspiciatis explicabo
-          totam vero quas provident ipsam, veritatis nostrum velit quos
-          recusandae est mollitia esse fugit dolore laudantium. Ex vel explicabo
-          earum unde eligendi autem praesentium, doloremque distinctio nesciunt
-          porro tempore quis eaque labore voluptatibus ea necessitatibus
-          exercitationem tempora molestias. Ad consequuntur veniam sequi ullam
-          tempore vel tenetur soluta dolore sunt maxime aliquam corporis est,
-          quo saepe dolorem optio minus sint nemo totam dolorum! Reprehenderit
-          delectus expedita a alias nam recusandae illo debitis repellat libero,
-          quasi explicabo molestiae saepe, dolorem tempore itaque eveniet quam
-          dignissimos blanditiis excepturi harum numquam vel nihil? Ipsum
-        </p>
-
-        <h2 className="text-center py-4">Our Products</h2>
-        <div className="row">
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center">Mens's Clothing</h5>
+      <div className="d-flex flex-column min-vh-100">
+        <div className="container my-3 py-3 flex-grow-1">
+          <h1 className="text-center">About Us</h1>
+          <hr />
+          <p className="lead text-center">
+            Carthago All Service GmbH was founded in Frankfurt am Main in 2018 – with the aim of offering specialized services in the areas of hotels, e-commerce and IT consulting. A dynamic company that is active throughout Germany has emerged from a clear vision and great commitment.
+            <br /><br />
+            Our work is characterized by flexibility, reliability and tailor-made solutions. In the hotel industry, we take on service and support tasks that relieve daily operations and ensure that everything runs smoothly. In the e-commerce area, we offer operational support and advice for efficient online sales structures. In addition, as part of our IT consulting services, we develop individual strategies to optimize digital processes and use innovative technologies in a targeted manner.
+            <br /><br />
+            Carthago All Service GmbH stands for quality, discretion and partnership. Our aim is to sustainably support our customers with well thought-out solutions and professional implementation.
+            <br /><br />
+            <strong>Carthago All Service GmbH – Your partner for service, innovation and success.</strong>
+          </p>
+            <br/>
+            <br/>
+          <div className="mt-5">
+            <h2 className="text-center fw-bold">What We Do</h2>
+            <br />
+            <p className="text-center lead">Services that we offer our customers</p>
+            <div className="row text-center mt-4">
+              <div className="col-md-4 mb-4">
+                <h5 className="fw-bold">IT solutions</h5>
+                <p>Innovative IT solutions for maximum productivity. Advanced systems for your specific business requirements.</p>
               </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center">Women's Clothing</h5>
+              <div className="col-md-4 mb-4">
+                <h5 className="fw-bold">Project takeover</h5>
+                <p>Efficient IT projects through outsourcing. Let us take over your projects and concentrate on your core business.</p>
               </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center">Jewelery</h5>
+              <div className="col-md-4 mb-4">
+                <h5 className="fw-bold">Security systems</h5>
+                <p>Innovative security systems for comprehensive protection. Advanced solutions for your individual security needs.</p>
               </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-sm-6 mb-3 px-3">
-            <div className="card h-100">
-              <img className="card-img-top img-fluid" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" height={160} />
-              <div className="card-body">
-                <h5 className="card-title text-center">Electronics</h5>
+              <div className="col-md-4 mb-4">
+                <h5 className="fw-bold">Reception service</h5>
+                <p>Reception service for optimal visitor support. Efficient and friendly support for your company.</p>
+              </div>
+              <div className="col-md-4 mb-4">
+                <h5 className="fw-bold">Doorman</h5>
+                <p>Doorman service for controlled and friendly reception. Security presence and support for a positive ambience in your entrance.</p>
               </div>
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

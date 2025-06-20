@@ -7,7 +7,11 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 sticky-top">
             <div className="container">
-                <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/"> React Ecommerce</NavLink>
+                <NavLink className="navbar-brand fw-bold fs-4 px-2 d-flex align-items-center gap-2" to="/">
+                    <img src='/assets/logo.png' alt="Logo" width="40" height="40" />
+                </NavLink>
+
+                <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/"> Carthago All Service GmbH</NavLink>
                 <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
