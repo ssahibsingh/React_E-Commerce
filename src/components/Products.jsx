@@ -8,6 +8,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
+import Searchbar from "./Searchbar.jsx";
+
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -74,6 +76,8 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
+      <Searchbar products={data} onSearch={setFilter}/>
+      
         <div className="buttons text-center py-5">
           <button
             className="btn btn-outline-dark btn-sm m-2"
