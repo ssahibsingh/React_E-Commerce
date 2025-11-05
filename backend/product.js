@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const productSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
+  id: { type: String, unique: true },
   name: { type: String },
   description: { type: String },
   price: { type: Number },
@@ -10,7 +10,8 @@ const productSchema = new mongoose.Schema({
       rate: { type: Number }, // double
       count: { type: Number } // int32
     }
-})
+},
+{collection: 'products'})
 
-const Product = mongoose.model('Product', userSchema)
+const Product = mongoose.model('products', productSchema)
 export default Product
