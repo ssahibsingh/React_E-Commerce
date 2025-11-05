@@ -16,8 +16,6 @@ dotenv.config()
 app.use(express.json())
 
 // API endpoints will eventually go here
-//
-//
 
 const PORT = process.env.PORT || 8000
 const server = app.listen(PORT, async () => {
