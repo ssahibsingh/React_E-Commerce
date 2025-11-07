@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
@@ -23,10 +24,10 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
+      const response = await axios.get(`http://localhost:8000/products`);
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        setData(response.data);
+        setFilter(response.data);
         setLoading(false);
       }
 
@@ -123,7 +124,7 @@ const Products = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
+                    {product.name.substring(0, 12)}...
                   </h5>
                   <p className="card-text">
                     {product.description.substring(0, 90)}...

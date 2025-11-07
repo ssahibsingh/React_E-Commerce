@@ -18,6 +18,16 @@ app.use(express.json())
 
 // API endpoints will eventually go here
 
+// Gets all products
+app.get('/products', async (req, res) => {
+    try {
+        const products = await Product.find()
+        res.json(products)
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+})
+
 
 // Supports GET by id (not object _id)
 app.get('/products/:id', async (req, res) => {
